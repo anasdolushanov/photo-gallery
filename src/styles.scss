@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #222299;
+    --secondary-color: #ccccff;
+    --text-color: #333333;
+}
+
+html {
+    font-size: 120%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+header {
+    .inner-header {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    button {
+        padding: 10px 25px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--secondary-color);
+        font-size: 125%;
+        cursor: pointer;
+        transition: all ease 0.3s;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}
