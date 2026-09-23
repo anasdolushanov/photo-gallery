@@ -1,0 +1,10 @@
+:host {
+    display: inline-block;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: all ease 0.3s;
+
+    &:hover {
+        filter: grayscale(0%);
+    }
+}

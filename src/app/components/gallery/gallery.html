@@ -1,9 +1,9 @@
-<section class="container">
-
-    <img src="https://picsum.photos/300/300" />
-    <img src="https://picsum.photos/300/300" />
-    <img src="https://picsum.photos/300/300" />
-    <img src="https://picsum.photos/300/300" />
-    <img src="https://picsum.photos/300/300" />
-    <img src="https://picsum.photos/300/300" />
+<section class="container gallery">
+    @for (img of images(); track img) {
+    <app-image [seed]="img" />
+    }
 </section>
+
+<mat-spinner></mat-spinner>
+
+<app-footer />

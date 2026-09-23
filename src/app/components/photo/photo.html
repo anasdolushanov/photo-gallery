@@ -1,0 +1,11 @@
+<div class="photo-page">
+  @if (imageUrl()) {
+    <div class="photo-viewer">
+      <img [src]="imageUrl()" />
+      
+      <div class="actions">
+        <button matButton (click)="removePhoto()" >Remove from Favourites</button>
+      </div>
+    </div>
+  } @else { }
+</div>

@@ -1,0 +1,9 @@
+<div class="image-container">
+    @if (isLoading()) {
+    <p>...</p>
+    } @else if (realUrl()) {
+    <img [src]="realUrl()" alt="Lorem Picsum image" />
+    } @else {
+    <p>Error loading image</p>
+    }
+</div>
