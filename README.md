@@ -1,59 +1,52 @@
-# PhotoGallery
+# Photo Gallery
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.24.
+An Angular photo library with an infinite random photostream and a persistent Favorites list, built with Angular Material and SCSS.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Photos** (`/`) — an infinite-scrolling grid of random photos from [Lorem Picsum](https://picsum.photos). New pages load automatically as you scroll, with a simulated 200–300ms network delay and a loading indicator. Click a photo to add it to Favorites.
+- **Favorites** (`/favorites`) — every photo you've favorited, persisted to `localStorage` so it survives a page refresh. Click a photo to open it full-screen.
+- **Single photo** (`/photos/:id`) — a full-screen view of one favorite with a "Remove from favorites" button.
+- The header highlights whichever view is currently active.
+
+Infinite scroll is implemented from scratch with the native `IntersectionObserver` API (no third-party scroll library).
+
+## Getting started
 
 ```bash
-ng serve
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Running unit tests
 
 ```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+npm test
 ```
 
 ## Building
 
-To build the project run:
-
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build artifacts are written to `dist/photo-gallery`.
 
-## Running unit tests
+## Project structure
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+src/app/
+├── components/
+│   ├── header/      # nav between Photos and Favorites
+│   ├── gallery/      # infinite-scrolling photo grid (Photos page)
+│   ├── favorites/    # saved favorites list
+│   ├── photo/        # single favorite, full-screen
+│   └── image/        # reusable photo tile (loading/error states)
+├── services/
+│   ├── photo.ts       # simulated random-photo API
+│   └── favorites.ts   # favorites state, persisted to localStorage
+└── models/
+    └── photo.ts        # Photo type
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

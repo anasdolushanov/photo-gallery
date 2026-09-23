@@ -1,9 +1,11 @@
 <section class="container gallery">
-    @for (img of images(); track img) {
-    <app-image [seed]="img" />
-    }
+  @for (photo of photos(); track photo.id) {
+    <app-image [url]="photo.url" (photoClick)="addFavorite(photo)" />
+  }
 </section>
 
-<mat-spinner></mat-spinner>
+@if (isLoading()) {
+  <mat-spinner class="loading-more" />
+}
 
-<app-footer />
+<div #sentinel class="sentinel"></div>

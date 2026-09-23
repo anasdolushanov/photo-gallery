@@ -1,0 +1,9 @@
+@if (favorites().length) {
+  <section class="container gallery">
+    @for (photo of favorites(); track photo.id) {
+      <app-image [url]="photo.url" (photoClick)="openPhoto(photo.id)" />
+    }
+  </section>
+} @else {
+  <p class="empty">No favorites yet. Tap a photo on the Photos tab to add one.</p>
+}

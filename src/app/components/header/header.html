@@ -1,7 +1,6 @@
 <header class="container">
     <div class="inner-header">
-        <button matButton routerLink="/" routerLinkActive="active">
-            <mat-icon>home</mat-icon> Photos</button>
-        <button matButton routerLink="/favourites" routerLinkActive="active">Favourites</button>
+        <button matButton routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Photos</button>
+        <button matButton routerLink="/favorites" routerLinkActive="active">Favorites</button>
     </div>
 </header>

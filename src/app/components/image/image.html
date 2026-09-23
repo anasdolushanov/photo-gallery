@@ -1,9 +1,16 @@
 <div class="image-container">
-    @if (isLoading()) {
-    <p>...</p>
-    } @else if (realUrl()) {
-    <img [src]="realUrl()" alt="Lorem Picsum image" />
-    } @else {
-    <p>Error loading image</p>
-    }
+  @if (isLoading()) {
+    <mat-spinner diameter="32" />
+  }
+  @if (hasError()) {
+    <p class="error">Failed to load image</p>
+  } @else {
+    <img
+      [src]="url()"
+      alt="Random photo"
+      [class.hidden]="isLoading()"
+      (load)="onLoad()"
+      (error)="onError()"
+    />
+  }
 </div>

@@ -1,0 +1,9 @@
+.inner-header {
+  display: flex;
+  gap: 0.5em;
+}
+
+button.active {
+  background: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-secondary-container);
+}

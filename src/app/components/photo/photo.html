@@ -1,11 +1,13 @@
 <div class="photo-page">
-  @if (imageUrl()) {
+  @if (photo(); as p) {
     <div class="photo-viewer">
-      <img [src]="imageUrl()" />
-      
+      <img [src]="p.url" alt="Favorite photo" />
+
       <div class="actions">
-        <button matButton (click)="removePhoto()" >Remove from Favourites</button>
+        <button matButton (click)="removeFromFavorites()">Remove from favorites</button>
       </div>
     </div>
-  } @else { }
+  } @else {
+    <p class="not-found">This photo is no longer in your favorites.</p>
+  }
 </div>

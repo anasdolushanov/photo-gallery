@@ -69,19 +69,10 @@ header {
 }
 
 main section.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2em;
-}
-
-mat-spinner {
-  display: none;
-  margin: 2em auto;
-}
-
-app-footer {
-  height: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center;
+  gap: 1.5em;
 }
 
 .photo-viewer {
